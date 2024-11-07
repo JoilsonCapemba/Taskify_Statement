@@ -8,7 +8,7 @@ export function Login(){
                 <img src={tasksImage} alt="taskImages" />
             </aside>
 
-            <main className='bg-purple-500  flex flex-1 '>
+            <main className='bg-purple-500  flex flex-1 m-1 rounded-md'>
                 
                 <div className='w-[70%] mx-auto self-center'>
                     <h1 className='text-2xl font-extrabold text-white mb-4'>Login</h1>
@@ -18,6 +18,8 @@ export function Login(){
                         
                         <label htmlFor="password" className='text-white'><Key className='inline-block'/> password</label>
                         <input type="password" placeholder='password' className='bg-slate-200 p-3 rounded-md mb-3 text-gray-700 text-base border-none '/>
+
+                        <button type='submit' className='p-2 rounded-lg mt-8 w-[60%] self-center bg-orange-400 text-white'>login</button>
                     </form>
                 </div>
             </main>

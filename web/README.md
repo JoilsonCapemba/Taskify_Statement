@@ -48,3 +48,8 @@ export default tseslint.config({
   },
 })
 ```
+
+
+<NavLink className="p-3 bg-gray-100 m-1 rounded-md mb-2"><Timer className="inline"/> pendings</NavLink>
+                        <NavLink className="p-3 bg-gray-100 m-1 rounded-md mb-2"><FlagCheckered className="inline"/> finisheds</NavLink>
+                        <NavLink className="p-3 bg-gray-100 m-1 rounded-md mb-2"><SignOut className="inline"/> Logout</NavLink>
