@@ -1,22 +1,31 @@
-import { CheckCircle, FlagCheckered, House, ListChecks, MagnifyingGlass, PencilLine, PlusCircle, SignOut, Timer, Trash } from "phosphor-react";
+import { CheckCircle, ListChecks, MagnifyingGlass, PencilLine, PlusCircle, Trash } from "phosphor-react";
 import { NavLink } from "react-router-dom";
+import { Menu } from "../../components/Menu";
+import { useContext, useEffect, useState } from "react";
+import { Task } from "../../components/Task";
+import { TaskContext } from "../../contexts/TasksContext";
+
+interface Task{
+    title: string,
+    priority: string,
+    status: string
+}
 
 export function Home(){
+    const {tasks} = useContext(TaskContext)
+
+    /*function handleCreateTask(title: string, priority: string, status: string){
+        setTask({title, priority,status})
+    }*/
+
+    
+
+    
+
     return(
         <div className='bg-gray-300 flex   max-w-[75rem] mx-auto mt-[5rem] h-[80vh] rounded-md'>
-
-            <aside className='bg-gray-200 min-w-[300px] p-4 justify-center'>
-                <div className="flex justify-center items-center gap-4 mb-6">
-                    <img src="https://github.com/joilsoncapemba.png" alt="avatar" className="w-14 rounded-full" />
-                    <p>Joilson Capemba</p>
-                </div>
-                <nav className="w-[300px] flex flex-col">
-                        <NavLink to="/" className=" hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><House className="inline"/> Home</NavLink>
-                        <NavLink to="/" className="hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><Timer className="inline"/> pendings</NavLink>
-                        <NavLink to="/" className="hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><FlagCheckered className="inline"/> finisheds</NavLink>
-                        <NavLink to="/login" className=" hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><SignOut className="inline"/> Logout</NavLink>
-                </nav>
-            </aside>
+            {/* Menu component*/}
+            <Menu/>
 
             <main className='bg-gray-100  flex flex-1 flex-col p-4 items-center '>
                 <h1 className="mb-8 font-extrabold text-gray-800 text-lg flex text-center gap-1"><ListChecks/>My Tasks</h1>
@@ -50,29 +59,11 @@ export function Home(){
                     </thead>
 
                     <tbody>
-                        <tr className="bg-white p-2 m-3 ">
-                            <td className="p-3">Tarefa</td>
-                            <td className="text-red-500">urgente</td>
-                            <td className="flex items-center h-full"><CheckCircle color="green"/>concluida</td>
-                            <td className="">
-                                <div className="flex justify-center gap-x-8  text-center">
-                                    <form action=""><button type="submit"><Trash size={20} color="red"/> </button ></form>
-                                    <NavLink to="/updateTask"><PencilLine size={20} color="blue"/></NavLink >
-                                </div>
-                            </td>
-                        </tr>
 
-                        <tr className="bg-white p-2 m-3 ">
-                            <td className="p-3">Tarefa</td>
-                            <td>urgente</td>
-                            <td>pendente</td>
-                            <td className="">
-                                <div className="flex justify-center gap-4 text-center relative ">
-                                    <form action=""><button type="submit"><Trash size={20} color="red"/> </button></form>
-                                    <NavLink to="/updateTask"><PencilLine size={20} color="blue"/></NavLink >
-                                </div>
-                            </td>
-                        </tr>
+                        
+                            <Task title={"Task test"} priority={"urgente"} status={"importante"} />
+                        
+                    
                     </tbody>
                 </table>
                 </div>

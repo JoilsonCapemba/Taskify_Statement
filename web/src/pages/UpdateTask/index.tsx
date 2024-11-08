@@ -1,22 +1,10 @@
-import { FlagCheckered, House, SignOut, Timer } from "phosphor-react";
-import { NavLink } from "react-router-dom";
+import { Menu } from "../../components/Menu";
 
 export function UpdateTask(){
     return(
         <div className='bg-gray-300 flex   max-w-[75rem] mx-auto mt-[5rem] h-[80vh] rounded-md'>
 
-            <aside className='bg-gray-200 min-w-[300px] p-4 justify-center'>
-                <div className="flex justify-center items-center gap-4 mb-6">
-                    <img src="https://github.com/joilsoncapemba.png" alt="avatar" className="w-14 rounded-full" />
-                    <p>Joilson Capemba</p>
-                </div>
-                <nav className="w-[300px] flex flex-col">
-                        <NavLink to="/" className=" hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><House className="inline"/> Home</NavLink>
-                        <NavLink to="/" className="hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><Timer className="inline"/> pendings</NavLink>
-                        <NavLink to="/" className="hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><FlagCheckered className="inline"/> finisheds</NavLink>
-                        <NavLink to="/login" className=" hover:bg-purple-300 p-3 bg-gray-100 m-1 rounded-md mb-2"><SignOut className="inline"/> Logout</NavLink>
-                </nav>
-            </aside>
+            <Menu/>
 
             <main className='bg-gray-100  flex flex-1 flex-col p-4 items-center '>
                 <h1 className="mb-8 font-extrabold text-gray-800 text-lg mt-3">Atualizar Tarefa</h1>

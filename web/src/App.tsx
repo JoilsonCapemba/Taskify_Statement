@@ -1,13 +1,18 @@
 import { BrowserRouter } from "react-router-dom"
-import { Home } from "./pages/Home"
 import { Router } from "./routes/Router"
+import { UserProvider } from "./contexts/UserContext"
+import { TaskProvider } from "./contexts/TasksContext"
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Router/>
-    </BrowserRouter>
+    <UserProvider>
+      <TaskProvider>
+      <BrowserRouter>
+        <Router/>
+      </BrowserRouter>
+      </TaskProvider>
+    </UserProvider>
   )
 }
 
